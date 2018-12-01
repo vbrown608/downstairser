@@ -1,10 +1,16 @@
 module Paper
-  def self.make
+  def self.body
     result = ""
     client.bookmarks.bookmarks.each do |bookmark|
       result += client.get_text(bookmark.bookmark_id)
     end
     "<html><head></head><body>" + result + "</body></html>"
+  end
+
+  def self.pdf
+    kit = PDFKit.new(body, :page_size => 'Letter')
+    pdf = kit.to_pdf
+    file = kit.to_file('testing.pdf')
   end
   
   def self.client

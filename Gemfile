@@ -18,6 +18,7 @@ gem 'dotenv'
 gem 'rake'
 gem 'byebug'
 gem 'httparty'
+gem 'pdfkit'
 
 # Component requirements
 gem 'activerecord', '>= 3.1', :require => 'active_record'

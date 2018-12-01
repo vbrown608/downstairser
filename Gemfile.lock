@@ -103,6 +103,7 @@ GEM
       mime-types (< 4)
       padrino-core (= 0.14.4)
     padrino-support (0.14.4)
+    pdfkit (0.8.2)
     public_suffix (3.0.3)
     rack (2.0.6)
     rack-protection (2.0.4)
@@ -140,6 +141,7 @@ DEPENDENCIES
   instapaper
   omniauth-instapaper
   padrino (= 0.14.4)
+  pdfkit
   rake
   sqlite3
 
