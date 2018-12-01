@@ -8,9 +8,11 @@ module Downstairser
     enable :sessions
     
     set :login_page, "/"
+    set :protect_from_csrf, false
+
 
     use OmniAuth::Builder do
-      provider :pocket, client_id: ENV["POCKET_CONSUMER_KEY"]
+      provider :instapaper, ENV["INSTAPAPER_CONSUMER_KEY"], ENV["INSTAPAPER_CONSUMER_SECRET"]
     end
     ##
     # Caching support.

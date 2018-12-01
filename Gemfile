@@ -24,7 +24,8 @@ gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 
 # User management
-gem 'omniauth-pocket'
+gem 'omniauth-instapaper'
+gem 'instapaper'
 
 # Test requirements
 
