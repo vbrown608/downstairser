@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+body {
+  font-family: 'Lora', serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.article {
+  column-count: 2;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-gap: 40px;
+  margin-bottom: 100px;
+}
+
+code {
+  padding: 2px 4px;
+  font-family: monospace;
+  word-wrap: break-word;
+  line-height: 1.2em;
+  color: #003659;
+  background: #d6eaf4;
+  border-radius: 3px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: inline;
+  overflow: auto;
+}
+
+pre {
+  overflow: auto;
+  background-color: #fafafa;
+  border-radius: 3px;
+  margin: 20px 0;
+  display: block;
+  padding: 9.5px;
+  font-size: 13px;
+  line-height: 1.42857;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  border: 1px solid #ccc;
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+    display: inline-block;
+  }
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eee;
+}

@@ -23,6 +23,7 @@ gem 'pdfkit'
 # Component requirements
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
+gem 'sass'
 
 # User management
 gem 'omniauth-instapaper'

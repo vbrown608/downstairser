@@ -3,6 +3,7 @@ require 'dotenv/load'
 module Downstairser
   class App < Padrino::Application
     use ConnectionPoolManagement
+    register SassInitializer
     register Padrino::Mailer
     register Padrino::Helpers
     enable :sessions
@@ -10,6 +11,7 @@ module Downstairser
     set :login_page, "/"
     set :protect_from_csrf, false
 
+    layout :downstairser
 
     use OmniAuth::Builder do
       provider :instapaper, ENV["INSTAPAPER_CONSUMER_KEY"], ENV["INSTAPAPER_CONSUMER_SECRET"]

@@ -8,6 +8,6 @@ Downstairser::App.controller do
   end
 
   get :paper do
-    return Paper.body
+    render "paper"
   end
 end
