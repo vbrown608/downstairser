@@ -1,4 +1,8 @@
 Downstairser::App.controller do
+  get :index do
+    render "home"
+  end
+
   get :auth, :csrf_protection => false, :map => '/auth/:provider/callback' do
     auth = request.env["omniauth.auth"]
     user = User.find_by_email(auth.info.name) ||

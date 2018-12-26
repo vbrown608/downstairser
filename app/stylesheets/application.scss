@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Lora');
 
+@font-face {
+  font-family: 'New Yorker';
+  font-style: normal;
+  src: url("../fonts/newyorker.ttf") format("truetype");
+}
+
 body {
   font-family: 'Lora', serif;
+}
+
+#title {
+  font-family: 'New Yorker';
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 48px;
+
+  span {
+    display: block;
+    font-size: 32px;
+  }
 }
 
 img {

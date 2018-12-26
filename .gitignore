@@ -8,4 +8,4 @@ db/*.db
 .*.sw*
 .env
 .byebug_history
-public/*
+public/stylesheets/*
