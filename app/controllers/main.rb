@@ -7,8 +7,11 @@ Downstairser::App.controller do
     auth = request.env["omniauth.auth"]
     user = User.find_by_email(auth.info.name) ||
            User.create_with_omniauth(auth)
-    # set_current_account(account)
-    # redirect "http://" + request.env["HTTP_HOST"] + url(:profile)
+    if user
+      render "home"
+    else
+      return "Unauthorized"
+    end
   end
 
   get :paper do
