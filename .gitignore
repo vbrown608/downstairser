@@ -9,3 +9,5 @@ db/*.db
 .env
 .byebug_history
 public/stylesheets/*
+public/files/*
+node_modules/*

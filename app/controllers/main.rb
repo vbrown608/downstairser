@@ -14,4 +14,10 @@ Downstairser::App.controller do
   get :paper do
     render "paper"
   end
+
+  get :pdf do
+    url = "#{request.base_url}/paper"
+    system("node pdf.js #{Shellwords.escape(url)} public/files/downstairser.pdf")
+    send_file "public/files/downstairser.pdf"
+  end
 end
