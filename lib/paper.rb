@@ -12,4 +12,8 @@ module Paper
   def self.articles
     User.all.map{ |x| x.articles }.flatten.sort { |x, y| x.time <=> y.time }
   end
+
+  def self.cutoff
+    Time.now - 30.days
+  end
 end

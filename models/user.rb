@@ -9,9 +9,13 @@ class User < ActiveRecord::Base
   end
 
   def articles
-    starred = instapaper.bookmarks(limit: 3, folder_id: :starred).bookmarks
+    starred = instapaper
+      .bookmarks(limit: 3, folder_id: :starred).bookmarks
+      .select{ |x| x.time >= Paper.cutoff }
     return starred if starred.count == 3
-    starred + instapaper.bookmarks(limit: 3 - starred.count).bookmarks
+    starred + instapaper
+      .bookmarks(limit: 3 - starred.count).bookmarks
+      .select{ |x| x.time >= Paper.cutoff }
   end
 
   def instapaper
