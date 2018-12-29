@@ -17,7 +17,8 @@ ActiveRecord::Base.configurations[:development] = {
   :adapter => 'postgresql',
   :database => 'downstairser_dev',
   :username => ENV["DB_USERNAME"],
-  :password => ENV["DB_PASSWORD"]
+  :password => ENV["DB_PASSWORD"],
+  :host => ENV["DB_HOST"]
 
 }
 
@@ -25,7 +26,8 @@ ActiveRecord::Base.configurations[:production] = {
   :adapter => 'postgresql',
   :database => 'downstairser_prod',
   :username => ENV["DB_USERNAME"],
-  :password => ENV["DB_PASSWORD"]
+  :password => ENV["DB_PASSWORD"],
+  :host => ENV["DB_HOST"]
 
 }
 
@@ -33,7 +35,8 @@ ActiveRecord::Base.configurations[:test] = {
   :adapter => 'postgresql',
   :database => 'downstairser_test',
   :username => ENV["DB_USERNAME"],
-  :password => ENV["DB_PASSWORD"]
+  :password => ENV["DB_PASSWORD"],
+  :host => ENV["DB_HOST"]
 
 }
 
