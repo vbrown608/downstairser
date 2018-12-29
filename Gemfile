@@ -22,7 +22,7 @@ gem 'pdfkit'
 
 # Component requirements
 gem 'activerecord', '>= 3.1', :require => 'active_record'
-gem 'sqlite3'
+gem 'pg'
 gem 'sass'
 
 # User management

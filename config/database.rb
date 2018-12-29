@@ -14,20 +14,26 @@
 #   }
 #
 ActiveRecord::Base.configurations[:development] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'downstairser_development.db')
+  :adapter => 'postgresql',
+  :database => 'downstairser_dev',
+  :username => ENV["DB_USERNAME"],
+  :password => ENV["DB_PASSWORD"]
 
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'downstairser_production.db')
+  :adapter => 'postgresql',
+  :database => 'downstairser_prod',
+  :username => ENV["DB_USERNAME"],
+  :password => ENV["DB_PASSWORD"]
 
 }
 
 ActiveRecord::Base.configurations[:test] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'downstairser_test.db')
+  :adapter => 'postgresql',
+  :database => 'downstairser_test',
+  :username => ENV["DB_USERNAME"],
+  :password => ENV["DB_PASSWORD"]
 
 }
 
