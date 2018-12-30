@@ -10,4 +10,5 @@ db/*.db
 .byebug_history
 public/stylesheets/*
 public/files/*
+!public/files/.keep
 node_modules/*
