@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :articles
+
   def self.create_with_omniauth(auth)
     return false unless ENV["BOARD"].split(" ").include?(auth.info.name)
     create! do |u|
@@ -8,14 +10,18 @@ class User < ActiveRecord::Base
     end
   end
 
-  def articles
-    starred = instapaper
-      .bookmarks(limit: 3, folder_id: :starred).bookmarks
-      .select{ |x| x.time >= Paper.cutoff }
-    return starred if starred.count == 3
-    starred + instapaper
-      .bookmarks(limit: 3 - starred.count).bookmarks
-      .select{ |x| x.time >= Paper.cutoff }
+  def sync_articles
+    have = articles.pluck(:instapaper_id).join(",")
+    instapaper.bookmarks().bookmarks.each do |b|
+      a = Article.find_or_initialize_by(instapaper_id: b.bookmark_id)
+      a.update!(
+        user_id: id,
+        title: b.title,
+        saved_at: b.time,
+        starred: b.starred,
+      )
+      a.sync_body
+    end
   end
 
   def instapaper

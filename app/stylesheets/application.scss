@@ -8,6 +8,12 @@
 
 body {
   font-family: 'Lora', serif;
+  font-size: 13px;
+  line-height: 1.35em;
+}
+
+h1, h2, h3 {
+  line-height: 1.3em;
 }
 
 #title {
@@ -15,6 +21,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-size: 48px;
+  line-height: 0.9em;
 
   span {
     display: block;
@@ -38,7 +45,8 @@ code {
   padding: 2px 4px;
   font-family: monospace;
   word-wrap: break-word;
-  line-height: 1.2em;
+  font-size: 0.75rem;
+  line-height: 1.1em;
   color: #003659;
   background: #d6eaf4;
   border-radius: 3px;
@@ -55,15 +63,16 @@ pre {
   margin: 20px 0;
   display: block;
   padding: 9.5px;
-  font-size: 13px;
-  line-height: 1.42857;
+  font-size: 0.75rem;
+  line-height: 1.4em;
   white-space: pre-wrap;
   color: #333;
   border: 1px solid #ccc;
 
   code {
     padding: 0;
-    font-size: inherit;
+    font-size: 0.7rem;
+    line-height: 1.35em;
     color: inherit;
     white-space: pre-wrap;
     background-color: transparent;
@@ -76,6 +85,7 @@ blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   font-size: 17.5px;
+  line-height: 1.2em;
   border-left: 5px solid #eee;
 }
 
@@ -90,4 +100,9 @@ blockquote {
       font-size: 48px;
     }
   }
+}
+
+@page {
+  size: auto;
+  margin: 10mm 10mm 25mm;
 }
