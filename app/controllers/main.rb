@@ -15,6 +15,8 @@ Downstairser::App.controller do
   end
 
   get :paper do
+    Article.sync
+    @articles = Article.for_print
     render "paper"
   end
 

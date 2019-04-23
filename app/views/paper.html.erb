@@ -1,2 +1,5 @@
 <h1 id="title"><span>The</span> Down Stairser</h1>
-<%= Paper.body.html_safe %>
+<% @articles.each do |a| %>
+  <h1><%= a.title %></h1>
+  <div class="article"><%= a.body.html_safe %></div>
+<% end %>

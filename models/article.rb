@@ -1,6 +1,10 @@
 class Article < ActiveRecord::Base
   belongs_to :user
 
+  def self.sync
+    User.all.each(&:sync_articles)
+  end
+
   def self.for_print
     # Get an array of articles for each user.
     u_articles = User.includes(:articles)
