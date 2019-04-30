@@ -11,8 +11,9 @@ class User < ActiveRecord::Base
   end
 
   def sync_articles
-    have = articles.pluck(:instapaper_id).join(",")
-    instapaper.bookmarks().bookmarks.each do |b|
+    bookmarks = instapaper.bookmarks().bookmarks
+    return if bookmarks.empty?
+    bookmarks.each do |b|
       a = Article.find_or_initialize_by(instapaper_id: b.bookmark_id)
       a.update!(
         user_id: id,
@@ -22,6 +23,7 @@ class User < ActiveRecord::Base
       )
       a.sync_body
     end
+    articles.where.not(instapaper_id: bookmarks.pluck(:bookmark_id)).destroy_all
   end
 
   def instapaper
